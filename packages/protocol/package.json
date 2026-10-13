@@ -1,0 +1,28 @@
+{
+  "name": "@streamlingo/protocol",
+  "version": "0.2.0",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "michael-chow-arch",
+    "email": "michael.chow.tech@gmail.com",
+    "url": "https://github.com/michael-chow-arch"
+  },
+  "homepage": "https://github.com/michael-chow-arch/StreamLingo#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michael-chow-arch/StreamLingo.git",
+    "directory": "packages/protocol"
+  },
+  "bugs": "https://github.com/michael-chow-arch/StreamLingo/issues",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "zod": "4.6.6"
+  }
+}

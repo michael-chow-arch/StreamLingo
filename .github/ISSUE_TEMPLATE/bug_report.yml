@@ -1,0 +1,83 @@
+name: Bug report / 问题反馈
+description: Report a reproducible installation, capture, subtitle, or translation problem.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English and 简体中文 are welcome. Please check the [setup guide](https://github.com/michael-chow-arch/StreamLingo/blob/main/docs/getting-started.md) first.
+        For security vulnerabilities, email michael.chow.tech@gmail.com instead of posting details here.
+        Redact logs and screenshots. Do not attach private audio, account details, or a whole live-stream recording.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened? / 遇到了什么问题？
+      description: Include the expected result and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce / 复现步骤
+      description: A small original or synthetic audio example is useful when the problem depends on speech.
+      placeholder: |
+        1. Start the service with...
+        2. Choose translation mode...
+        3. Start subtitles on...
+        4. Observe...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment / 运行环境
+      description: Use "unknown" where needed. Hardware matters for inference delays.
+      value: |
+        StreamLingo version or commit:
+        Installation: preview package / source checkout
+        OS:
+        Chrome version:
+        Python version:
+        Node version (source builds only):
+        CPU / RAM:
+        GPU / VRAM (if used):
+        ASR model:
+        Ollama model:
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Translation mode / 翻译方向
+      options:
+        - English → Chinese
+        - Chinese → English
+        - Auto → Chinese
+        - Auto → English
+        - Not applicable / cannot start
+    validations:
+      required: true
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: Runtime / 后端模式
+      options:
+        - Real speech recognition + Ollama
+        - Speech recognition without translation
+        - Demo (fixed sample subtitles)
+        - Unknown / cannot start
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Redacted errors or screenshots / 已脱敏的错误与截图
+      description: Include the exact error code and relevant log lines. Health showing "configured" does not confirm a real translation succeeded.
+      render: text
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Before submitting / 提交前确认
+      options:
+        - label: I checked this report for private recordings, personal information, credentials, and sensitive transcript text.
+          required: true

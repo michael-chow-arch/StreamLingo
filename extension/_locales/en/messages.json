@@ -1,0 +1,5 @@
+{
+  "extensionName": { "message": "StreamLingo" },
+  "extensionDescription": { "message": "AI captions for YouTube livestreams, powered by local LLMs. No streamer captions needed. Requires local speech service + Ollama." },
+  "actionTitle": { "message": "StreamLingo live captions" }
+}

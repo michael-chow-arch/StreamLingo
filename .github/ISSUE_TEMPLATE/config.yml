@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Getting started / 安装指南
+    url: https://github.com/michael-chow-arch/StreamLingo/blob/main/docs/getting-started.md
+    about: Installation, model setup, updates, and troubleshooting.
+  - name: Report a security issue privately / 私密报告安全问题
+    url: https://github.com/michael-chow-arch/StreamLingo/blob/main/SECURITY.md
+    about: Read the policy and contact the maintainer by email; do not disclose vulnerabilities in a public issue.

@@ -1,0 +1,39 @@
+{
+  "name": "streamlingo",
+  "version": "0.2.0",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "michael-chow-arch",
+    "email": "michael.chow.tech@gmail.com",
+    "url": "https://github.com/michael-chow-arch"
+  },
+  "homepage": "https://github.com/michael-chow-arch/StreamLingo#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michael-chow-arch/StreamLingo.git"
+  },
+  "bugs": "https://github.com/michael-chow-arch/StreamLingo/issues",
+  "workspaces": [
+    "extension",
+    "packages/protocol"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/build.mjs",
+    "build:store": "node scripts/build.mjs --store",
+    "package:store": "python scripts/package-extension.py",
+    "package:windows": "python scripts/package-windows.py",
+    "package:materials": "python scripts/package-store-assets.py",
+    "demo:ui": "node scripts/demo-preview.mjs",
+    "test": "node scripts/test.mjs",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.3.5",
+    "@types/node": "26.6.5",
+    "esbuild": "0.28.2",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  }
+}

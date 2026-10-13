@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StreamLingo</title>
+    <link rel="stylesheet" href="./popup.css" />
+    <script type="module" src="./popup.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="brand">
+        <svg class="brand-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="9" fill="currentColor" />
+          <path d="M8 13v6m5-10v14m6-12v10m5-7v4" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+        </svg>
+        <div><h1>StreamLingo</h1><p class="eyebrow" data-i18n="eyebrow">YouTube · 实时翻译字幕</p></div>
+        <select id="ui-language" class="language-select" aria-label="界面语言"><option value="zh-CN">中文</option><option value="en">English</option></select>
+      </header>
+
+      <section class="session-panel" aria-labelledby="session-heading">
+        <div class="status-row"><h2 id="session-heading" data-i18n="sessionHeading">当前会话</h2><span id="phase" class="badge" data-state="idle">读取中</span></div>
+        <p id="session-description" class="session-description" aria-live="polite">正在读取插件状态…</p>
+        <button id="session-button" class="primary" type="button" disabled>开始字幕</button>
+        <p class="hint" data-i18n="captureHint">开始后将标签页音频发送至本机服务以生成字幕。关闭弹窗后继续运行。</p>
+      </section>
+
+      <section class="service-panel" aria-labelledby="service-heading">
+        <div class="status-row"><h2 id="service-heading" data-i18n="serviceHeading">本地服务</h2><span id="health-status" class="service-status">尚未检查</span></div>
+        <p id="mode-notice" class="notice" role="status">正在读取本地服务的识别与翻译状态…</p>
+        <form id="settings-form" novalidate>
+          <label for="translation-mode" data-i18n="translationModeLabel">翻译方向</label>
+          <select id="translation-mode" class="mode-select" aria-describedby="mode-notice form-error">
+            <option value="en-zh" data-i18n="modeEnZh">英语 → 中文</option>
+            <option value="zh-en" data-i18n="modeZhEn">中文 → 英语</option>
+            <option value="auto-zh" data-i18n="modeAutoZh">自动识别 → 中文</option>
+            <option value="auto-en" data-i18n="modeAutoEn">自动识别 → 英语</option>
+          </select>
+          <details class="settings-details">
+            <summary data-i18n="settingsSummary">服务地址与字幕设置</summary>
+          <label for="backend-url" data-i18n="backendLabel">服务地址</label>
+          <input id="backend-url" name="backendBaseUrl" type="url" spellcheck="false" autocomplete="off" aria-describedby="backend-hint form-error" value="http://127.0.0.1:8765" required />
+          <p id="backend-hint" class="hint" data-i18n="backendHint">支持本机 localhost 或 127.0.0.1 的 HTTP 地址。</p>
+          <div class="preferences">
+            <div class="size-field"><label for="font-size" data-i18n="fontLabel">字幕字号</label><div class="number-wrap"><input id="font-size" type="number" min="16" max="48" step="1" value="24" inputmode="numeric" required /><span aria-hidden="true">px</span></div></div>
+            <label class="check-field"><input id="show-source" type="checkbox" checked /><span data-i18n="showSource">显示原文</span></label>
+          </div>
+          </details>
+          <p id="form-error" class="error" role="alert" hidden></p>
+          <div class="form-actions"><button id="save-button" type="submit" data-i18n="saveSettings">保存设置</button><button id="health-button" type="button" data-i18n="checkConnection">测试连接</button></div>
+        </form>
+      </section>
+      <p id="feedback" class="feedback" aria-live="polite" hidden></p>
+      <footer>
+        <p class="setup-hint" data-i18n="localServiceRequired">需要另行安装并启动本地识别与翻译服务。</p>
+        <p class="author-links"><a href="https://github.com/michael-chow-arch/StreamLingo" target="_blank" rel="noopener noreferrer" data-i18n="projectLink">项目与安装说明</a><span aria-hidden="true"> · </span><a href="mailto:michael.chow.tech@gmail.com" data-i18n="contactLink">联系作者</a><span aria-hidden="true"> · </span><a href="https://github.com/michael-chow-arch/StreamLingo/blob/main/docs/privacy-policy.md" target="_blank" rel="noopener noreferrer" data-i18n="privacyLink">隐私说明</a></p>
+        <details><summary data-i18n="connectionInfo">后端连接信息</summary><p data-i18n="originHint">将此扩展来源加入后端的允许列表：</p><code id="extension-origin">正在读取…</code></details>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "streamlingo-backend"
+version = "0.2.0"
+description = "Local speech and subtitle service for StreamLingo"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "michael-chow-arch", email = "michael.chow.tech@gmail.com" }]
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "fastapi>=0.141.1,<1",
+  "uvicorn>=0.35,<1",
+  "websockets>=15,<17",
+  "httpx>=0.28,<1",
+  "anyio>=4,<5",
+]
+
+[project.urls]
+Homepage = "https://github.com/michael-chow-arch/StreamLingo"
+Repository = "https://github.com/michael-chow-arch/StreamLingo"
+Issues = "https://github.com/michael-chow-arch/StreamLingo/issues"
+
+[project.optional-dependencies]
+asr = [
+  "whisperlivekit==0.2.26",
+  "faster-whisper==1.2.1",
+  "ctranslate2==4.8.3",
+]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+streamlingo-server = "streamlingo.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

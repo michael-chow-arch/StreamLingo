@@ -1,0 +1,5 @@
+{
+  "extensionName": { "message": "StreamLingo" },
+  "extensionDescription": { "message": "YouTube 直播实时 AI 翻译字幕，支持本地大模型，不依赖主播提供字幕。英中双向与自动识别；需要另行安装本地语音服务和 Ollama。" },
+  "actionTitle": { "message": "StreamLingo 实时字幕" }
+}

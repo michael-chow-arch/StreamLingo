@@ -1,0 +1,26 @@
+name: Feature request / 功能建议
+description: Describe a use case and a focused improvement.
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: English and 简体中文 are welcome. Explain the viewing or setup problem before proposing implementation details.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve? / 想解决什么问题？
+      description: Who needs this, and when does the current behavior get in the way?
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Proposed behavior / 期望的行为
+      description: Describe a concrete example of using the feature.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives and constraints / 替代方案与限制
+      description: Mention relevant existing projects, hardware limits, privacy needs, or language requirements.
